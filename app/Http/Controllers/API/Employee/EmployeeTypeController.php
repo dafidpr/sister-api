@@ -12,11 +12,14 @@ use Yajra\DataTables\Facades\DataTables;
 
 class EmployeeTypeController extends Controller
 {
-    public function get()
+    public function get(Request $request)
     {
         try {
-            $data = DataTables::of(EmployeeType::all())->make(true);
-            return response()->json($data);
+            $data = EmployeeType::all();
+            return isset($request->datatable) && $request->datatable == 'true' ? DataTables::of($data)->make(true) : response()->json([
+                'status' => true,
+                'data' => $data
+            ]);
         } catch (Exception $e) {
             return response()->json([
                 'message' => $e->getMessage(),
