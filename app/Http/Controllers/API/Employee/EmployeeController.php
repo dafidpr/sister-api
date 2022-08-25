@@ -62,10 +62,10 @@ class EmployeeController extends Controller
             ], 500);
         }
     }
-    public function update(EmployeeRequest $request, EmployeeType $employeeType)
+    public function update(EmployeeRequest $request, Employee $employee)
     {
         try {
-            $employeeType->update([
+            $employee->update([
                 'employee_type_id' => $request->employee_type_id,
                 'nip' => $request->nip,
                 'nidn' => $request->nidn,
