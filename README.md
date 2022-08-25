@@ -20,7 +20,7 @@ After all the setup is complete, run the Android emulator or native device, then
 #### API Base URL
 Main url of API
 ```
-http://localhost:8000/api/v1/
+https://api-sister.herokuapp.com/api/v1/
 ```
 
 #### Employee Type
